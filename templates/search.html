@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css" />
+  </head>
+  <body>
+    <main class="container">
+      <hgroup>
+        <h1>키워드 검색 : "{{keyword}}"</h1>
+        <a href="/export?keyword={{keyword}}" role="button" target="_blank"><span style="color: white">출력</span></a>
+      </hgroup>
+      <table role="grid">
+        <thead>
+          <tr>
+            <td>키워드</td>
+            <td>월검색수(PC)</td>
+            <td>월검색수(모바일)</td>
+          </tr>
+        </thead>
+        <tbod>
+          {% for k in keywords%}
+          <tr>
+            <td>{{k.keyword}}</td>
+            <td>{{k.monthlySrhCountPC}}</td>
+            <td>{{k.monthlySrhCountMobile}}</td>
+          </tr>
+          {% endfor %}
+        </tbod>
+      </table>
+    </main>
+  </body>
+</html>
