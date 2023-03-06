@@ -3,8 +3,14 @@ from bs4 import BeautifulSoup
 
 def extract_keywords(keyword):
     base_url = "https://keywordmaster.net/키워드검색량조회/?keyword="
+    base_url = "https://www.coupang.com/np/search?q=키보드&channel=recent"
+    
+    headers = {
+    'User-Agent':'Mozilla/5.0 (X11; Linux i686; rv:64.0) Gecko/20100101 Firefox/64.0'
+    }
 
-    response = get(f"{base_url}{keyword}")
+    # response = get(f"{base_url}{keyword}")
+    response = get(f"{base_url}", headers=headers)
     if response.status_code != 200:
         print('요청 오류')
     else:
